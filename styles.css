@@ -12,11 +12,42 @@
     --text: #1A1A2E;
     --text-light: #6B6B7A;
     --bg: #F8F9FA;
+    --bg-card: #FFFFFF;
     --white: #FFFFFF;
     --shadow: 0 4px 20px rgba(108, 99, 255, 0.15);
     --shadow-hover: 0 8px 40px rgba(108, 99, 255, 0.25);
     --radius: 16px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-color: #e0e0e0;
+    --bg-nav: rgba(255, 255, 255, 0.9);
+    --bg-hero: linear-gradient(135deg, #F8F9FA 0%, #EEF0FF 100%);
+    --bg-about: #FFFFFF;
+    --bg-skills: #F8F9FA;
+    --bg-projects: #FFFFFF;
+    --bg-contact: #2D2D3A;
+    --text-contact: #FFFFFF;
+    --text-sub-contact: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== MODO OSCURO ===== */
+[data-theme="dark"] {
+    --text: #F0F0F0;
+    --text-light: #B0B0B8;
+    --bg: #12121A;
+    --bg-card: #1E1E2E;
+    --white: #1E1E2E;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 40px rgba(108, 99, 255, 0.35);
+    --border-color: #33334A;
+    --bg-nav: rgba(18, 18, 26, 0.95);
+    --bg-hero: linear-gradient(135deg, #12121A 0%, #1A1A2E 100%);
+    --bg-about: #1A1A2E;
+    --bg-skills: #12121A;
+    --bg-projects: #1A1A2E;
+    --bg-contact: #0A0A12;
+    --text-contact: #F0F0F0;
+    --text-sub-contact: rgba(240, 240, 240, 0.7);
+    --bg-quote: #2D2D4A;
 }
 
 html {
@@ -28,6 +59,7 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -38,7 +70,7 @@ body {
 
 /* ===== NAVBAR ===== */
 .navbar {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--bg-nav);
     backdrop-filter: blur(12px);
     box-shadow: var(--shadow);
     position: fixed;
@@ -99,13 +131,35 @@ body {
     color: var(--primary);
 }
 
+/* ===== BOTÓN TEMA ===== */
+.theme-btn {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    transform: rotate(30deg) scale(1.05);
+    border-color: var(--primary);
+}
+
 /* ===== HERO ===== */
 .hero {
     padding: 140px 0 80px;
-    background: linear-gradient(135deg, #F8F9FA 0%, #EEF0FF 100%);
+    background: var(--bg-hero);
     min-height: 100vh;
     display: flex;
     align-items: center;
+    transition: background 0.3s ease;
 }
 
 .hero-content {
@@ -131,6 +185,7 @@ body {
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 4px;
+    color: var(--text);
 }
 
 .hero h2 {
@@ -192,7 +247,7 @@ body {
 
 .btn-secondary:hover {
     background: var(--text);
-    color: white;
+    color: var(--bg);
     transform: translateY(-3px);
 }
 
@@ -203,7 +258,8 @@ body {
 }
 
 .hero-tags span {
-    background: white;
+    background: var(--bg-card);
+    color: var(--text);
     padding: 6px 18px;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -230,7 +286,8 @@ body {
 }
 
 .floating-badge {
-    background: white;
+    background: var(--bg-card);
+    color: var(--text);
     padding: 12px 24px;
     border-radius: 50px;
     box-shadow: var(--shadow);
@@ -259,6 +316,7 @@ body {
     font-weight: 800;
     text-align: center;
     margin-bottom: 12px;
+    color: var(--text);
 }
 
 .section-subtitle {
@@ -271,7 +329,8 @@ body {
 /* ===== SOBRE MÍ ===== */
 .about {
     padding: 80px 0;
-    background: var(--white);
+    background: var(--bg-about);
+    transition: background 0.3s ease;
 }
 
 .about-grid {
@@ -301,11 +360,12 @@ body {
 
 .about-interests span {
     background: var(--bg);
+    color: var(--text);
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
@@ -344,7 +404,8 @@ body {
 /* ===== HABILIDADES ===== */
 .skills {
     padding: 80px 0;
-    background: var(--bg);
+    background: var(--bg-skills);
+    transition: background 0.3s ease;
 }
 
 .skills-grid {
@@ -354,7 +415,8 @@ body {
 }
 
 .skill-card {
-    background: var(--white);
+    background: var(--bg-card);
+    color: var(--text);
     padding: 30px 24px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -376,6 +438,7 @@ body {
 .skill-card h3 {
     font-size: 1.2rem;
     margin-bottom: 12px;
+    color: var(--text);
 }
 
 .skill-card ul {
@@ -391,7 +454,8 @@ body {
 /* ===== PROYECTOS ===== */
 .projects {
     padding: 80px 0;
-    background: var(--white);
+    background: var(--bg-projects);
+    transition: background 0.3s ease;
 }
 
 .projects-grid {
@@ -401,10 +465,12 @@ body {
 }
 
 .project-card {
-    background: var(--bg);
+    background: var(--bg-card);
+    color: var(--text);
     border-radius: var(--radius);
     overflow: hidden;
     transition: var(--transition);
+    box-shadow: var(--shadow);
 }
 
 .project-card:hover {
@@ -429,6 +495,7 @@ body {
 .project-info h3 {
     font-size: 1.3rem;
     margin-bottom: 8px;
+    color: var(--text);
 }
 
 .project-info p {
@@ -445,12 +512,12 @@ body {
 }
 
 .project-tags span {
-    background: var(--white);
+    background: var(--bg);
+    color: var(--primary);
     padding: 4px 14px;
     border-radius: 50px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--primary);
 }
 
 .project-link {
@@ -468,23 +535,23 @@ body {
 /* ===== CONTACTO ===== */
 .contact {
     padding: 80px 0;
-    background: var(--secondary);
-    color: white;
+    background: var(--bg-contact);
+    transition: background 0.3s ease;
 }
 
 .contact .section-title {
-    color: white;
+    color: var(--text-contact);
 }
 
 .contact .section-subtitle {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-sub-contact);
 }
 
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 800px;
+    gap: 16px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -492,8 +559,8 @@ body {
     display: flex;
     align-items: center;
     gap: 14px;
-    background: rgba(255, 255, 255, 0.08);
-    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 16px 22px;
     border-radius: var(--radius);
     color: white;
     text-decoration: none;
@@ -502,21 +569,63 @@ body {
 }
 
 .contact-card:hover {
-    background: rgba(255, 255, 255, 0.16);
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.02);
 }
 
 .contact-icon {
     font-size: 1.6rem;
+    width: 32px;
+    text-align: center;
+}
+
+/* ===== COLORES DE CONTACTO ===== */
+.contact-card.email:hover {
+    background: rgba(108, 99, 255, 0.3);
+    border-color: #6C63FF;
+}
+.contact-card.whatsapp:hover {
+    background: rgba(37, 211, 102, 0.3);
+    border-color: #25D366;
+}
+.contact-card.whatsapp .contact-icon {
+    color: #25D366;
+}
+.contact-card.instagram:hover {
+    background: rgba(225, 48, 108, 0.3);
+    border-color: #E1306C;
+}
+.contact-card.instagram .contact-icon {
+    color: #E1306C;
+}
+.contact-card.discord:hover {
+    background: rgba(88, 101, 242, 0.3);
+    border-color: #5865F2;
+}
+.contact-card.discord .contact-icon {
+    color: #5865F2;
+}
+.contact-card.linkedin:hover {
+    background: rgba(10, 102, 194, 0.3);
+    border-color: #0A66C2;
+}
+.contact-card.linkedin .contact-icon {
+    color: #0A66C2;
+}
+.contact-card.github:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #FFFFFF;
+}
+.contact-card.github .contact-icon {
+    color: #FFFFFF;
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background: var(--secondary);
-    color: white;
+    background: var(--bg-contact);
+    color: var(--text-contact);
     text-align: center;
     padding: 30px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -573,10 +682,6 @@ footer {
     }
 
     .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -592,5 +697,9 @@ footer {
 
     .hero-emoji .emoji-big {
         font-size: 4rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 }
