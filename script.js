@@ -1,3 +1,30 @@
+// ===== MODO OSCURO =====
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const icon = themeToggle.querySelector('i');
+
+// Cargar tema guardado
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+updateIcon(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateIcon(newTheme);
+});
+
+function updateIcon(theme) {
+    if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+}
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.querySelector('.navbar');
 
@@ -43,6 +70,6 @@ document.querySelectorAll('.skill-card, .project-card, .about-grid, .contact-car
 });
 
 // ===== CONSOLE =====
-console.log('🧑‍💻 Daniel · Programador Full Stack');
+console.log('🧑🏽‍💻 Daniel · Programador Full Stack');
 console.log('🚀 Portafolio cargado con éxito');
 console.log('✨ "El código es poesía en movimiento"');
