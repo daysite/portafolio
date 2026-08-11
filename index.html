@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Daniel · Programador</title>
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
@@ -20,6 +22,9 @@
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <button id="themeToggle" class="theme-btn" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </nav>
 
@@ -49,7 +54,7 @@
                 </div>
             </div>
             <div class="hero-emoji">
-                <span class="emoji-big">🧑‍💻</span>
+                <span class="emoji-big">🧑🏽‍💻</span>
                 <div class="floating-badge">✨ <strong>20+</strong> proyectos</div>
                 <div class="floating-badge right">🔥 <strong>2 años</strong> programando</div>
             </div>
@@ -159,7 +164,6 @@
 
             <div class="projects-grid">
 
-                <!-- Proyecto 1 -->
                 <div class="project-card">
                     <div class="project-image">🛒</div>
                     <div class="project-info">
@@ -174,7 +178,6 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 2 -->
                 <div class="project-card">
                     <div class="project-image">📊</div>
                     <div class="project-info">
@@ -189,7 +192,6 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 3 -->
                 <div class="project-card">
                     <div class="project-image">📱</div>
                     <div class="project-info">
@@ -215,21 +217,45 @@
             <p class="section-subtitle">Estoy siempre abierto a nuevas ideas y colaboraciones</p>
 
             <div class="contact-grid">
-                <a href="mailto:daniel@email.com" class="contact-card">
-                    <span class="contact-icon">📧</span>
+                <!-- Email -->
+                <a href="mailto:daniel@email.com" class="contact-card email">
+                    <i class="fas fa-envelope contact-icon"></i>
                     <span>daniel@email.com</span>
                 </a>
-                <a href="https://linkedin.com/in/tu-perfil" class="contact-card" target="_blank">
-                    <span class="contact-icon">💼</span>
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/1234567890?text=Hola%20Daniel!%20Vi%20tu%20portafolio" 
+                   class="contact-card whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp contact-icon"></i>
+                    <span>WhatsApp</span>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/tu-usuario" 
+                   class="contact-card instagram" target="_blank">
+                    <i class="fab fa-instagram contact-icon"></i>
+                    <span>Instagram</span>
+                </a>
+                
+                <!-- Discord -->
+                <a href="https://discord.com/users/tu-id" 
+                   class="contact-card discord" target="_blank">
+                    <i class="fab fa-discord contact-icon"></i>
+                    <span>Discord</span>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/tu-perfil" 
+                   class="contact-card linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in contact-icon"></i>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/tu-usuario" class="contact-card" target="_blank">
-                    <span class="contact-icon">🐙</span>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/tu-usuario" 
+                   class="contact-card github" target="_blank">
+                    <i class="fab fa-github contact-icon"></i>
                     <span>GitHub</span>
-                </a>
-                <a href="https://twitter.com/tu-usuario" class="contact-card" target="_blank">
-                    <span class="contact-icon">🐦</span>
-                    <span>Twitter</span>
                 </a>
             </div>
         </div>
