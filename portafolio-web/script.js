@@ -1,4 +1,15 @@
-// Smooth scroll para navegación
+// ===== NAVBAR SCROLL =====
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.08)';
+    } else {
+        navbar.style.boxShadow = '0 4px 20px rgba(108, 99, 255, 0.15)';
+    }
+});
+
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -12,17 +23,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Cambiar navbar al hacer scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
-    } else {
-        navbar.style.boxShadow = '0 4px 20px rgba(108, 99, 255, 0.1)';
-    }
-});
-
-// Animación de entrada para elementos
+// ===== ANIMACIONES AL SCROLL =====
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -34,13 +35,14 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.1
 });
 
-// Aplicar animación a tarjetas
-document.querySelectorAll('.skill-card, .service-item, .project-card').forEach(el => {
+document.querySelectorAll('.skill-card, .project-card, .about-grid, .contact-card').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
     observer.observe(el);
 });
 
-console.log('✅ Portafolio cargado correctamente');
-console.log('👋 Hola, soy Daniel - Desarrollador Full Stack');
+// ===== CONSOLE =====
+console.log('🧑‍💻 Daniel · Programador Full Stack');
+console.log('🚀 Portafolio cargado con éxito');
+console.log('✨ "El código es poesía en movimiento"');
