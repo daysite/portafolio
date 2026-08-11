@@ -1,193 +1,255 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel | Portafolio</title>
-    
-    <!-- ESTE ES EL CSS - VERIFICA QUE EXISTA -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- FUENTE -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS DE EMERGENCIA - POR SI NO CARGA EL ARCHIVO */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: Arial, sans-serif; 
-            background: #f0f2f5; 
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        h1 { color: #6C63FF; text-align: center; }
-        .card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 4px solid #6C63FF;
-        }
-        .card h2 { margin-bottom: 10px; }
-        ul { list-style: none; padding: 0; }
-        ul li { padding: 8px 0; }
-        .tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 15px 0;
-        }
-        .tags span {
-            background: #6C63FF;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #6C63FF;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 5px;
-        }
-        .btn:hover { background: #5a52d5; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .project {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .project .icon { font-size: 3rem; }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            color: #888;
-        }
-        a { color: #6C63FF; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            margin: 10px 0;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Daniel · Programador</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <div class="container">
-        <h1>👋 Daniel [Apellido]</h1>
-        <p style="text-align: center; font-size: 1.2rem; color: #666;">Desarrollador Full Stack</p>
-        
-        <div class="card">
-            <h2>💪 Lo que sé hacer</h2>
-            <ul>
-                <li>✅ React / Next.js</li>
-                <li>✅ Node.js / Express</li>
-                <li>✅ Python / Django</li>
-                <li>✅ MySQL / MongoDB</li>
-                <li>✅ Docker / AWS</li>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Daniel<span>Dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
+    </nav>
 
-        <div class="card">
-            <h2>💼 Lo que puedo vender</h2>
-            <ul>
-                <li>🌐 Desarrollo de aplicaciones web completas</li>
-                <li>📱 Apps móviles con React Native</li>
-                <li>🛠️ Consultoría técnica</li>
-                <li>📚 Formación y mentoring</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>🛠️ Tecnologías que uso</h2>
-            <div class="tags">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>TypeScript</span>
-                <span>Python</span>
-                <span>Docker</span>
-                <span>AWS</span>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>📂 Proyectos Destacados</h2>
-            <div class="grid">
-                <div class="project">
-                    <div class="icon">🛒</div>
-                    <h3>E-commerce</h3>
-                    <p style="font-size: 0.9rem; color: #666;">Plataforma de ventas online</p>
-                    <div class="tags" style="justify-content: center;">
-                        <span style="background: #ddd; color: #333;">React</span>
-                        <span style="background: #ddd; color: #333;">Node</span>
-                    </div>
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">👋 Hola, soy</span>
+                <h1>Daniel</h1>
+                <h2>Programador <span class="highlight">Full Stack</span></h2>
+                <p class="hero-desc">
+                    Me encanta crear cosas con código. 
+                    Desde aplicaciones web hasta soluciones que resuelven problemas reales.
+                    <br /><br />
+                    🚀 <strong>+2 años</strong> escribiendo líneas de código
+                </p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn-primary">Ver mi trabajo</a>
+                    <a href="#contacto" class="btn-secondary">Hablemos</a>
                 </div>
-                <div class="project">
-                    <div class="icon">📊</div>
-                    <h3>Task Manager</h3>
-                    <p style="font-size: 0.9rem; color: #666;">Gestión de tareas y proyectos</p>
-                    <div class="tags" style="justify-content: center;">
-                        <span style="background: #ddd; color: #333;">Vue</span>
-                        <span style="background: #ddd; color: #333;">Python</span>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="icon">📱</div>
-                    <h3>App Salud</h3>
-                    <p style="font-size: 0.9rem; color: #666;">Monitoreo de hábitos</p>
-                    <div class="tags" style="justify-content: center;">
-                        <span style="background: #ddd; color: #333;">React Native</span>
-                        <span style="background: #ddd; color: #333;">Firebase</span>
-                    </div>
+                <div class="hero-tags">
+                    <span>#React</span>
+                    <span>#NodeJS</span>
+                    <span>#Python</span>
+                    <span>#Docker</span>
+                    <span>#AWS</span>
                 </div>
             </div>
-        </div>
-
-        <div class="card">
-            <h2>📫 Contacto</h2>
-            <div class="contact-item">
-                <span>📧</span>
-                <p><a href="mailto:daniel@email.com">daniel@email.com</a></p>
-            </div>
-            <div class="contact-item">
-                <span>💼</span>
-                <p><a href="https://linkedin.com/in/tu-perfil">LinkedIn</a></p>
-            </div>
-            <div class="contact-item">
-                <span>🐙</span>
-                <p><a href="https://github.com/tu-usuario">GitHub</a></p>
+            <div class="hero-emoji">
+                <span class="emoji-big">🧑‍💻</span>
+                <div class="floating-badge">✨ <strong>20+</strong> proyectos</div>
+                <div class="floating-badge right">🔥 <strong>2 años</strong> programando</div>
             </div>
         </div>
+    </section>
 
-        <div style="text-align: center; margin: 30px 0;">
-            <a href="#" class="btn">Ver más proyectos</a>
-            <a href="#" class="btn" style="background: transparent; color: #6C63FF; border: 2px solid #6C63FF;">Contactar</a>
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">📖 Sobre mí</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        <strong>¡Hola! Soy Daniel</strong>, un apasionado de la programación que 
+                        encontró en el código su forma favorita de expresarse.
+                    </p>
+                    <p>
+                        Desde que escribí mi primera línea de código, supe que esto era lo mío. 
+                        Me encanta aprender cosas nuevas, resolver problemas y construir 
+                        soluciones que realmente ayuden a las personas.
+                    </p>
+                    <p>
+                        💡 <strong>Mi filosofía:</strong> 
+                        <em>"El código no es solo tecnología, es creatividad, lógica y 
+                        la oportunidad de crear algo que no existía antes."</em>
+                    </p>
+                    <div class="about-interests">
+                        <span>☕ Café</span>
+                        <span>🎧 Música</span>
+                        <span>📚 Leer</span>
+                        <span>🎮 Videojuegos</span>
+                        <span>🚀 Open Source</span>
+                    </div>
+                </div>
+                <div class="about-quote">
+                    <div class="quote-box">
+                        <span class="quote-icon">💻</span>
+                        <blockquote>
+                            "Programar no es solo escribir código, 
+                            es crear soluciones que hacen la vida más fácil"
+                        </blockquote>
+                        <p>— Daniel</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <footer>
-            <p>© 2026 Daniel [Apellido] - Hecho con ❤️</p>
-        </footer>
-    </div>
+    <!-- ===== HABILIDADES ===== -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <h2 class="section-title">🛠️ Mis habilidades</h2>
+            <p class="section-subtitle">Tecnologías que domino y sigo aprendiendo</p>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span class="skill-icon">🎨</span>
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>React & Next.js</li>
+                        <li>TypeScript</li>
+                        <li>Tailwind CSS</li>
+                        <li>HTML & CSS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">⚙️</span>
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js / Express</li>
+                        <li>Python / Django</li>
+                        <li>APIs RESTful</li>
+                        <li>GraphQL (básico)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">🗄️</span>
+                    <h3>Bases de Datos</h3>
+                    <ul>
+                        <li>MySQL / PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>Firebase</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">☁️</span>
+                    <h3>DevOps & Herramientas</h3>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Git / GitHub</li>
+                        <li>CI/CD (básico)</li>
+                        <li>AWS (básico)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2 class="section-title">📂 Proyectos que he hecho</h2>
+            <p class="section-subtitle">Cosas que he construido con código</p>
+
+            <div class="projects-grid">
+
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <div class="project-image">🛒</div>
+                    <div class="project-info">
+                        <h3>E-commerce</h3>
+                        <p>Plataforma de ventas con carrito, pagos y panel de administración</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <a href="#" class="project-link">Ver proyecto →</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-info">
+                        <h3>TaskFlow</h3>
+                        <p>Gestión de tareas con tableros Kanban y métricas de productividad</p>
+                        <div class="project-tags">
+                            <span>Vue.js</span>
+                            <span>Python</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <a href="#" class="project-link">Ver proyecto →</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-info">
+                        <h3>HealthTrack</h3>
+                        <p>App de salud para monitorear hábitos con recomendaciones personalizadas</p>
+                        <div class="project-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>IA</span>
+                        </div>
+                        <a href="#" class="project-link">Ver proyecto →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">📫 ¿Hablamos?</h2>
+            <p class="section-subtitle">Estoy siempre abierto a nuevas ideas y colaboraciones</p>
+
+            <div class="contact-grid">
+                <a href="mailto:daniel@email.com" class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <span>daniel@email.com</span>
+                </a>
+                <a href="https://linkedin.com/in/tu-perfil" class="contact-card" target="_blank">
+                    <span class="contact-icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/tu-usuario" class="contact-card" target="_blank">
+                    <span class="contact-icon">🐙</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://twitter.com/tu-usuario" class="contact-card" target="_blank">
+                    <span class="contact-icon">🐦</span>
+                    <span>Twitter</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p>
+                © 2026 Daniel · Hecho con 
+                <span style="color: #FF6B6B;">❤️</span> 
+                y mucho 
+                <span style="color: #6C63FF;">☕</span>
+            </p>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">
+                "La programación no es mi trabajo, es mi pasión"
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
